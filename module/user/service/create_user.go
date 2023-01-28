@@ -23,14 +23,16 @@ func (s *CreateUserService) Do(req *user.CreateUserRequest) error {
 	if err != nil {
 		return err
 	}
+	fmt.Println(119911)
 	if len(users) != 0 {
 		return errno.UserAlreadyExistErr
 	}
-
+	fmt.Println(220022)
 	h := md5.New()
 	if _, err = io.WriteString(h, req.Password); err != nil {
 		return err
 	}
+	fmt.Println(334433)
 	pswd := fmt.Sprintf("%x", h.Sum(nil))
 	return db.CreateUser(s.ctx, []*db.User{{
 		Name: req.Name,

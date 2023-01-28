@@ -23,14 +23,13 @@ func Init()  {
 			LogLevel: logger.Info,
 		},
 	)
-	DB, err := gorm.Open(
+	DB, err = gorm.Open(
 		mysql.Open(consts.MySQLDefaultDSN),
 		&gorm.Config{
 			PrepareStmt: true,
 			Logger: gormlogrus,
 		},
 	)
-	DB.AutoMigrate(&User{})
 	if err != nil {
 		panic(err)
 	}

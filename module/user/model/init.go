@@ -1,6 +1,6 @@
 package model
 
-import "ghkd/module/note/model/db"
+import "ghkd/module/user/model/db"
 
 func Init() {
 	db.Init()

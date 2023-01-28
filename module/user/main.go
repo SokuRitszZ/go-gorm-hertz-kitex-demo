@@ -2,7 +2,7 @@ package main
 
 import (
 	"ghkd/kitex_gen/user/userservice"
-	"ghkd/module/note/model"
+	"ghkd/module/user/model"
 	"ghkd/pkg/consts"
 	"ghkd/pkg/mw"
 	"net"

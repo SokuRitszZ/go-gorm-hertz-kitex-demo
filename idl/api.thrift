@@ -2,7 +2,7 @@ namespace go api
 
 struct BaseResp {
 	1: i64 status_code
-	2: string status_time
+	2: string status_message
 	3: i64 service_time
 }
 
@@ -13,7 +13,7 @@ struct User {
 }
 
 struct Note {
-	1: i64 note_id
+	1: i64 ID
 	2: i64 user_id
 	3: string user_name
 	4: string user_avatar
@@ -59,6 +59,8 @@ struct QueryNoteRequest {
 
 struct QueryNoteResponse {
 	1: BaseResp base_resp
+	2: list<Note> notes
+	3: i64 total 
 }
 
 struct UpdateNoteRequest {
